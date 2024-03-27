@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="style.css">
+
+	<title>CIBER</title>
+</head>
+<style>
+main{
+	background-image: url("./img/bpc.png");
+	
+
+    /* background-image: url('./img/boss.jpg'); Add your background image URL */
+	/* background-color:#4caf50 ; */
+    background-size: 15%;
+    background-position: center;
+
+}
+.profile-card {
+    position: relative;
+    width: 500px; /* Adjust the width as needed */
+	height: 460px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-background {
+    width: 100%;
+    height: 130px;
+    /* background-image: url('./img/boss.jpg'); Add your background image URL */
+	background-color:#4caf50 ;
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-content {
+	height: 500px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.profile-name {
+    font-size: 1.5em;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.profile-description {
+    font-size: 1.2em;
+    color: #555;
+    text-align: center;
+}
+
+.profile-details {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.profile-details li {
+    margin-bottom: 5px;
+    color: #888;
+}
+</style>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<img class="logo" src="./img/bpc.png" alt="BPC Logo" width="60" height="70">
+		</a>
+		<ul class="side-menu top">
+			<li  class="active">
+				<a href="./home.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Home</span>
+				</a>
+			</li>
+			<li >
+				<a href="./index.html">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Work History</span>
+				</a>
+			</li>
+			<li>
+				<a href="./add.html">
+					<i class='bx bxs-add-to-queue' ></i>
+					<span class="text">Add Details</span>
+				</a>
+			</li>
+			<li>
+				<a href="./sorting.html">
+					<i class='bx bxs-search' ></i>
+					<span class="text">Search</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			
+			<li>
+				<a href="#" class="logout" onclick="logout()">
+					<i class='bx bxs-log-out-circle'></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<form class="form">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form >
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="profile-card">
+				<div class="profile-background"></div>
+				<div class="profile-content">
+					<img class="profile-image" src="./img/boss.jpg" alt="Profile Image">
+					<h1 class="profile-name">Arjun Tamang</h1>
+					<p class="profile-description">O&M Head & MTO</p>
+					<ul class="profile-details">
+						<li>ESD Trashiyangtse</li>
+					</ul>
+				</div>
+			</div>
+	
+
+
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+<script>
+	  const authToken = localStorage.getItem('authToken');
+    if (!authToken) {
+      // Redirect to the login page if not authenticated
+      window.location.href = './login.html';
+    }
+	function logout() {
+    // Remove the authentication token from local storage
+    localStorage.removeItem('authToken');
+
+    // Redirect the user to the login page
+    window.location.href = 'login.html';
+}
+
+
+</script>
+	<script src="script.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>
